@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ProHoReCa | Чек-листы и таблички</title>
+  <meta name="description" content="Экологичные чек-листы и таблички для HoReCa с кастомным дизайном." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+    html, body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0f9 100%);
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      background: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #93c5fd;
+    }
+    @media screen and (max-width: 640px) {
+      h1 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+      a.button-responsive {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="fixed w-full bg-white shadow-sm z-50 bg-white/80 backdrop-blur-md">
+    <div class="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-xl sm:text-2xl font-bold text-blue-600 flex items-center">
+        <span class="mr-2">ProHoReCa</span>
+        <i class="fas fa-clipboard-check text-blue-400"></i>
+      </a>
+      <nav class="hidden md:flex space-x-4 md:space-x-8 text-sm md:text-base">
+        <a href="#products" class="text-gray-700 hover:text-blue-600 transition">Продукция</a>
+        <a href="#customization" class="text-gray-700 hover:text-blue-600 transition">Кастомизация</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Отзывы</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Контакты</a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-lg">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-3 border-t text-sm">
+      <a href="#products" class="block py-2 text-gray-700 hover:text-blue-600 transition">Продукция</a>
+      <a href="#customization" class="block py-2 text-gray-700 hover:text-blue-600 transition">Кастомизация</a>
+      <a href="#testimonials" class="block py-2 text-gray-700 hover:text-blue-600 transition">Отзывы</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Контакты</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center text-white px-4 py-16 sm:py-24">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="/img/mainpage.png" 
+           alt="Чек-листы для ресторанов"
+           class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center max-w-xl md:max-w-2xl" data-aos="fade-up">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Профессиональные чек-листы и таблички для HoReCa</h1>
+      <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8">Экологичные, долговечные и стильные решения для повышения качества сервиса в вашем заведении.</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+        <a href="#products" class="button-responsive bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition">Посмотреть продукты</a>
+        <a href="#contact" class="button-responsive border border-white hover:bg-white hover:text-blue-600 text-white text-sm sm:text-base font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition">Заказать консультацию</a>
+      </div>
+    </div>
+  </section>
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Почему выбирают наши продукты</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Инновационные решения для повышения стандартов сервиса</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Экологичные материалы</h3>
+                    <p class="text-gray-600">Используем только сертифицированные материалы, безопасные для окружающей среды и ваших гостей.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Высокая износостойкость</h3>
+                    <p class="text-gray-600">Наши продукты выдерживают интенсивное использование без потери качества и внешнего вида.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-pen-fancy text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Индивидуальный дизайн</h3>
+                    <p class="text-gray-600">Создаем уникальные решения, подчеркивающие стиль и философию вашего заведения.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Наша продукция</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Качественные решения для систематизации работы вашего заведения</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="/img/product_1.png" 
+                             alt="Чек-листы для уборки" 
+                             class="w-full h-full object-cover transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Чек-листы для уборки</h3>
+                        <p class="text-gray-600">Подробные списки задач для персонала, чтобы все номера и залы всегда были чистыми.</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden">
+                        <img src="/img/product_2.png" 
+                             alt="Настольные таблички" 
+                             class="w-full h-full object-cover transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Настольные таблички</h3>
+                        <p class="text-gray-600">Привлекательные таблички на столах для обозначения зон, акций или специальных предложений.</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="/img/product_3.png" 
+                             alt="Настенные таблички" 
+                             class="w-full h-full object-cover transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Настенные таблички</h3>
+                        <p class="text-gray-600">Информативные таблички для стен, указывающие направления или дополнительную информацию для гостей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Примеры нашей продукции</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Реальные решения для ресторанов и отелей</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/img/exmpl_1.png"
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div>
+                            <p class="text-white font-medium">Настольные таблички для резерва</p>
+                            <p class="text-white/80 text-sm">Отель "Престиж", Москва</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/img/exmpl_2.png" 
+                         alt="Настольные таблички на столах" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div>
+                            <p class="text-white font-medium">Настольные таблички для заказа</p>
+                            <p class="text-white/80 text-sm">Кафе "Вкусный момент", Санкт-Петербург</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <img src="/img/exmpl_3.png" 
+                         alt="Настенные таблички в отеле" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div>
+                            <p class="text-white font-medium">Чек-лист для уборки номеров</p>
+                            <p class="text-white/80 text-sm">Отель "Престиж", Москва</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customization" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold mb-6">Индивидуальная кастомизация</h2>
+                    <p class="text-gray-600 mb-6">Мы создаем продукты, которые идеально соответствуют потребностям вашего бизнеса и отражают его уникальный стиль.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-palette text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Выбор цвета</h3>
+                                <p class="text-gray-600">Подбираем цветовые решения в соответствии с вашим фирменным стилем.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-ruler-combined text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Размеры и форма</h3>
+                                <p class="text-gray-600">Любые нестандартные размеры и формы под ваши конкретные нужды.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-font text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Текст и шрифты</h3>
+                                <p class="text-gray-600">Индивидуальные текстовые решения и подбор шрифтов для максимального соответствия вашему бренду.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up">
+                        <h3 class="text-2xl font-semibold mb-4">Примеры кастомизации</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="100">
+                                <div class="w-16 h-16 mx-auto mb-2 rounded bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-swatchbook text-blue-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">100+ цветов</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="200">
+                                <div class="w-16 h-16 mx-auto mb-2 rounded bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-text-width text-blue-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">30+ шрифтов</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="300">
+                                <div class="w-16 h-16 mx-auto mb-2 rounded bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-hammer text-blue-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">Любые детали</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="400">
+                                <div class="w-16 h-16 mx-auto mb-2 rounded bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-cubes text-blue-600 text-xl"></i>
+                                </div>
+                                <p class="text-sm font-medium">Уникальный опыт</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Отзывы наших клиентов</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Узнайте, как наши продукты помогают заведениям работать эффективнее</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Анна Петрова" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Анна Петрова</h4>
+                            <p class="text-sm text-gray-500">Ресторан "Гастрономия"</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        "Чек-листы для уборки полностью изменили наши стандарты чистоты. Персонал работает систематизированно, проверки стали занимать меньше времени."
+                    </div>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Михаил Соколов" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Михаил Соколов</h4>
+                            <p class="text-sm text-gray-500">Отель "Престиж"</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        "Настенные таблички с нашей символикой прекрасно вписались в интерьер. Клиенты отмечают, что стало гораздо легче ориентироваться в пространстве отеля."
+                    </div>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Елена Иванова" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Елена Иванова</h4>
+                            <p class="text-sm text-gray-500">Кофейня "Вкусный момент"</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 mb-4">
+                        "Заказывали сменные настольные таблички для акций. Очень удобно, клиенты сразу обращают внимание. Дизайн предложили потрясающий — стильный и современный."
+                    </div>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-6">Готовы улучшить сервис в вашем заведении?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Оставьте заявку и получите индивидуальное решение для вашего бизнеса</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-8 rounded-lg transition duration-300">Заказать продукцию</a>
+                <a href="tel:+79991234567" class="border border-white hover:bg-blue-700 font-medium py-3 px-8 rounded-lg transition duration-300 inline-flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> +7 (999) 123-45-67
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold mb-6">Свяжитесь с нами</h2>
+                    <p class="text-gray-600 mb-8">Заполните форму, и наш менеджер свяжется с вами для уточнения деталей вашего заказа.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Адрес</h3>
+                                <p class="text-gray-600">г. Москва, ул. Образцова, д. 12, оф. 345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Email</h3>
+                                <p class="text-gray-600">info@prohoreca.ru</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Телефон</h3>
+                                <p class="text-gray-600">+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-1">Режим работы</h3>
+                                <p class="text-gray-600">Пн-Пт: 9:00 - 18:00</p>
+                                <p class="text-gray-600">Сб-Вс: выходной</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-xl" action="send.php" method="POST" data-aos="fade-up">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Ваше имя</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue-500">
+                        </div>
+    
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Телефон</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue-500">
+                        </div>
+    
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue-500">
+                        </div>
+    
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Сообщение</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue-500"></textarea>
+                        </div>
+    
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ответы на популярные вопросы о нашей продукции</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium bg-white p-4 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                        <span>Какой материал используется для чек-листов?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-white p-4 px-6 rounded-b-lg border-t-0">
+                        <p class="text-gray-600">Мы используем специальный экологичный пластик толщиной 0,8-1,2 мм с матовым покрытием, устойчивый к влаге и механическим повреждениям. Материал можно полностью переработать после использования.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium bg-white p-4 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                        <span>Можно ли заказать продукцию с собственным дизайном?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-white p-4 px-6 rounded-b-lg border-t-0">
+                        <p class="text-gray-600">Да, мы принимаем ваши дизайн-макеты в формате AI, PDF или PSD. Также наши дизайнеры могут разработать макет с нуля на основе ваших пожеланий и фирменного стиля.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium bg-white p-4 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                        <span>Сколько времени занимает производство и доставка?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-white p-4 px-6 rounded-b-lg border-t-0">
+                        <p class="text-gray-600">Стандартный срок производства - 3-5 рабочих дней. Экспресс-изготовление возможно за 1-2 дня (с доплатой 30%). Доставка по Москве - 1 день, в регионы - 2-5 дней в зависимости от удаленности.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium bg-white p-4 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                        <span>Есть ли скидки для постоянных клиентов?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-white p-4 px-6 rounded-b-lg border-t-0">
+                        <p class="text-gray-600">Да, для постоянных клиентов действует накопительная система скидок. При повторном заказе вы получаете скидку 5%, при третьем и последующих - 10%. Также возможны индивидуальные условия для крупных заказов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="mr-2">ProHoReCa</span>
+                        <i class="fas fa-clipboard-check text-blue-400"></i>
+                    </h3>
+                    <p class="text-gray-400 mb-4">Профессиональные решения для ресторанов, отелей и заведений HoReCa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Продукция</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Чек-листы для уборки</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Настольные таблички</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Настенные таблички</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Специальные решения</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Компания</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">О нас</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Отзывы</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Блог</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Контакты</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-400"></i>
+                            <span class="text-gray-400">г. Москва, ул. Образцова, д. 12, оф. 345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-blue-400"></i>
+                            <span class="text-gray-400">+7 (999) 123-45-67</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <span class="text-gray-400">info@prohoreca.ru</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2023 ProHoReCa. Все права защищены.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 transition">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 transition">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    if (window.innerWidth >= 640) {
+      AOS.init({ once: true, duration: 600 });
+    }
+    window.addEventListener("load", function () {
+      if (window.innerWidth >= 640) AOS.refresh();
+    });
+  </script>
+
+  <!-- Обновлённая логика: адаптивные изображения -->
+  <script>
+    document.querySelectorAll("img").forEach(img => {
+      if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
+      if (!img.hasAttribute("sizes")) img.setAttribute("sizes", "(max-width: 768px) 100vw, 50vw");
+    });
+  </script>
+
+  <!-- Восстановление оригинального JS -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqContent = button.nextElementSibling;
+        const icon = button.querySelector('i');
+
+        faqContent.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+
+        document.querySelectorAll('.faq-toggle').forEach(otherButton => {
+          if (otherButton !== button) {
+            otherButton.nextElementSibling.classList.add('hidden');
+            otherButton.querySelector('i').classList.remove('rotate-180');
+          }
+        });
+      });
+    });
+
+    // Anchor smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+          const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenu) mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Add shadow to header on scroll
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 10) {
+          header.classList.add('shadow-md');
+        } else {
+          header.classList.remove('shadow-md');
+        }
+      }
+    });
+  </script>
+  <script>
+  const isMobile = window.innerWidth < 640;
+
+  AOS.init({
+    once: true,
+    duration: isMobile ? 400 : 700,
+    offset: isMobile ? 30 : 80,
+    easing: 'ease-in-out'
+  });
+
+  window.addEventListener("load", () => {
+    AOS.refresh();
+  });
+</script>
+</body>
+</html>
+
+</body>
+</html>
